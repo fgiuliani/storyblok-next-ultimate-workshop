@@ -11,15 +11,10 @@ export default function Page({ story }) {
   story = useStoryblokState(story);
 
   return (
-    <div >
+    <div>
       <Head>
         <title>{story ? story.name : "My Site"}</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
-{/* 
-      <header>
-        <h1>{story ? story.name : "My Site"}</h1>
-      </header> */}
 
       <Layout>
         <StoryblokComponent blok={story.content} />
@@ -32,7 +27,7 @@ export async function getStaticProps({ params }) {
   let slug = params.slug ? params.slug.join("/") : "home";
 
   let sbParams = {
-    version: "draft", // or 'published'
+    version: "draft",
   };
 
   const storyblokApi = getStoryblokApi();
@@ -48,17 +43,24 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const storyblokApi = getStoryblokApi();
-  let { data } = await storyblokApi.get("cdn/links/");
+  let sbParams = {
+    version: "draft",
+  };
+
+  let { data } = await getStoryblokApi().get("cdn/links/", sbParams);
 
   let paths = [];
   Object.keys(data.links).forEach((linkKey) => {
-    if (data.links[linkKey].is_folder || data.links[linkKey].slug === "home") {
+    if (data.links[linkKey].is_folder) {
       return;
     }
 
     const slug = data.links[linkKey].slug;
     let splittedSlug = slug.split("/");
+
+    if (slug === "home") {
+      splittedSlug = false;
+    }
 
     paths.push({ params: { slug: splittedSlug } });
   });

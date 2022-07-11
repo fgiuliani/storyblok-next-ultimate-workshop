@@ -1,58 +1,15 @@
-# Next.js Storyblok Boilerplate
+## Storyblok + Next.js Workshop
 
-This repository is a Next.js [Storyblok](https://www.storyblok.com) starter template used in following [5 minute tutorial](https://www.storyblok.com/tp/add-a-headless-cms-to-next-js-in-5-minutes).
+This is the example repository for building a blog with Storyblok + Next.js.
 
-## Requirements
+1. Enter your preview token in the `_app.js` file
+2. Install dependencies and start the development server `npm install && npm run dev`
+3. Add your [https://localhost:3010](https://localhost:3010) as the **default location URL** in your Storyblok space settings
 
-To use this project you have to have a Storyblok account. If you don't have one yet you can register at [Storyblok](https://www.storyblok.com), it's free.
+## Learn More
 
-## How to get started?
+To learn more about Next.js, take a look at the following resources:
 
-Read the [Next.js tutorial](https://www.storyblok.com/tp/add-a-headless-cms-to-next-js-in-5-minutes) about connecting Storyblok and Next.js
-
-### 1. Clone the repo
-
-```sh
-  $ git clone https://github.com/storyblok/react-next-boilerplate.git
-```
-
-### 2. Install all dependecies 
-```sh
-$  yarn # or npm install
-```
-
-### 3. Adding the Access token
-Create a new empty Space and exchange the preview token with your own in ```pages/_app.js```.
-
-```js
-// in pages/_app.js
-storyblokInit({
-  accessToken: "your-preview-token",
-  use: [apiPlugin],
-  components,
-});
-```
-
-### 4. Run your project
-Set the preview domain in <strong>Storyblok</strong> to `http://localhost:3000/`
-
-```sh
-# to run in developer mode
-$ yarn dev # or npm run dev
-```
-
-```sh
-# to build your project
-$ yarn build # or npm run build
-```
-
-
-
-## Resources
-
-- [Next.js docs](https://nextjs.org/docs/#setup)
-- [Storyblok Tutorial](https://www.storyblok.com/tp/add-a-headless-cms-to-next-js-in-5-minutes)
-- [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode)
-
-
-  
+- [Add a headless CMS to Next.js in 5 minutes](https://www.storyblok.com/tp/add-a-headless-cms-to-next-js-in-5-minutes) - Tutorial to get started with Next.js & Storyblok
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
