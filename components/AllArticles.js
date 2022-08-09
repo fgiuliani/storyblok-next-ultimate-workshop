@@ -24,18 +24,15 @@ const AllArticles = ({ blok }) => {
   }, []);
 
   return (
-    <>
+    <div {...storyblokEditable(blok)}>
       <p className="text-3xl">{blok.title}</p>
-      <div
-        className="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3 lg:px-24 md:px-16"
-        {...storyblokEditable(blok)}
-      >
+      <div className="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3 lg:px-24 md:px-16">
         {articles[0] &&
           articles.map((article) => (
             <ArticleTeaser article={article.content} key={article.uuid} />
           ))}
       </div>
-    </>
+    </div>
   );
 };
 
