@@ -13,7 +13,7 @@ const components = {
   grid: Grid,
   teaser: Teaser,
   page: Page,
-  "hero-section": HeroSection,
+  hero_section: HeroSection,
   all_articles: AllArticles,
   article: Article,
 };
